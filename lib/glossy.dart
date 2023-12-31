@@ -34,41 +34,45 @@ class GlossyContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: height,
-      width: width,
-      color: Colors.transparent,
-      child: Stack(children: [
-        BackdropFilter(
-          filter: ImageFilter.blur(
-            sigmaX: strengthX == null ? 30 : strengthX!,
-            sigmaY: strengthY == null ? 30 : strengthY!,
+    return ClipRect(
+      child: Container(
+        height: height,
+        width: width,
+        color: Colors.transparent,
+        child: Stack(children: [
+          BackdropFilter(
+            filter: ImageFilter.blur(
+              sigmaX: strengthX == null ? 30 : strengthX!,
+              sigmaY: strengthY == null ? 30 : strengthY!,
+            ),
+            child: Container(),
           ),
-          child: Container(),
-        ),
-        Container(
-          decoration: BoxDecoration(
-              borderRadius: borderRadius,
-              border: border ??
-                  Border.all(
-                    color: Colors.grey,
-                    width: 0.5,
-                  ),
-              gradient: LinearGradient(
-                  tileMode: TileMode.mirror,
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    // Color.fromARGB(255, 107, 106, 106).withOpacity(0.153),
-                    // Color.fromARGB(255, 88, 88, 88).withOpacity(0.103),
-                    color!.withOpacity(0.453),
-                    Colors.red.withOpacity(0.34)
-                  ])),
-        ),
-        Container(
-          child: child,
-        )
-      ]),
+          Container(
+            height: height,
+            width: width,
+            decoration: BoxDecoration(
+                borderRadius: borderRadius,
+                border: border ??
+                    Border.all(
+                      color: Colors.grey,
+                      width: 0.5,
+                    ),
+                gradient: LinearGradient(
+                    tileMode: TileMode.mirror,
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      // Color.fromARGB(255, 107, 106, 106).withOpacity(0.153),
+                      // Color.fromARGB(255, 88, 88, 88).withOpacity(0.103),
+                      color!.withOpacity(opacity),
+                      Colors.red.withOpacity(opacity)
+                    ])),
+          ),
+          Container(
+            child: child,
+          )
+        ]),
+      ),
     );
   }
 }
