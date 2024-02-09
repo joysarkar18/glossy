@@ -1,22 +1,22 @@
 library glossy;
 
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class GlossyContainer extends StatelessWidget {
-  final double height;
-  final double width;
-  final BorderRadiusGeometry? borderRadius;
-  final Color? color;
-  final double? opacity;
-  final Widget? child;
-  final double? strengthX;
-  final double? strengthY;
-  final BoxBorder? border;
-  final BlendMode? blendMode;
-  final GlossyGradient? gradient;
-  final List<BoxShadow>? boxShadow;
+  final double height; // Height of the container
+  final double width; // Width of the container
+  final BorderRadiusGeometry? borderRadius; // Border radius of the container
+  final Color? color; // Background color of the container
+  final double? opacity; // Opacity of the container
+  final Widget? child; // Child widget inside the container
+  final double? strengthX; // Strength of blur in the horizontal direction
+  final double? strengthY; // Strength of blur in the vertical direction
+  final BoxBorder? border; // Border of the container
+  final BlendMode? blendMode; // Blend mode for applying filter
+  final GlossyGradient? gradient; // Gradient of the container
+  final List<BoxShadow>? boxShadow; // Box shadows for the container
+  final DecorationImage? image; // Background image of the container
 
   const GlossyContainer(
       {super.key,
@@ -31,20 +31,28 @@ class GlossyContainer extends StatelessWidget {
       this.blendMode,
       this.gradient,
       this.child,
+      this.image,
       this.boxShadow});
 
   @override
   Widget build(BuildContext context) {
-    late LinearGradient lg;
-    if (gradient is GlossyGradient) {
+    late Gradient gradientToApply; // Gradient to apply based on the type
+
+    // Check if the gradient is linear
+    if (gradient is GlossyLinearGradient) {
       final GlossyLinearGradient glg = gradient as GlossyLinearGradient;
-      lg = glg.getLinearGradient();
+      gradientToApply = glg.getLinearGradient(); // Get the linear gradient
+    }
+    // Check if the gradient is radial
+    if (gradient is GlossyRadialGradient) {
+      final GlossyRadialGradient glg = gradient as GlossyRadialGradient;
+      gradientToApply = glg.getRadialGradient(); // Get the radial gradient
     }
 
     return Container(
       decoration: BoxDecoration(
-        boxShadow: boxShadow,
-        borderRadius: borderRadius,
+        boxShadow: boxShadow, // Apply box shadows
+        borderRadius: borderRadius, // Apply border radius
       ),
       child: ClipRRect(
         borderRadius:
@@ -54,6 +62,7 @@ class GlossyContainer extends StatelessWidget {
           width: width,
           color: Colors.transparent,
           child: Stack(children: [
+            // Apply backdrop filter for blurring effect
             BackdropFilter(
               blendMode: blendMode != null ? blendMode! : BlendMode.srcOver,
               filter: ImageFilter.blur(
@@ -80,19 +89,28 @@ class GlossyContainer extends StatelessWidget {
                         end: Alignment.bottomRight,
                         colors: [
                             color == null
-                                ? Color.fromARGB(255, 138, 137, 137)
+                                ? const Color.fromARGB(255, 138, 137, 137)
                                     .withOpacity(opacity ?? 0.15)
                                 : color!.withOpacity(opacity ?? 0.15),
                             color == null
-                                ? Color.fromARGB(255, 121, 120, 120)
+                                ? const Color.fromARGB(255, 121, 120, 120)
                                     .withOpacity(opacity ?? 0.15)
                                 : color!.withOpacity(opacity ?? 0.15),
-                            // color!.withOpacity(opacity),
-                            // Colors.red.withOpacity(opacity)
                           ])
-                    : lg,
+                    : gradientToApply,
               ),
             ),
+            // Apply background image if available
+            image != null
+                ? Opacity(
+                    opacity: opacity == null ? 1 : opacity!,
+                    child: Container(
+                      height: height,
+                      width: width,
+                      decoration: BoxDecoration(image: image),
+                    ),
+                  )
+                : const SizedBox(),
             Container(
               child: child,
             )
@@ -103,12 +121,14 @@ class GlossyContainer extends StatelessWidget {
   }
 }
 
+// Abstract class for defining glossy gradients
 abstract class GlossyGradient {
   const GlossyGradient({required this.colors, required this.opacity});
   final List<Color> colors;
   final double opacity;
 }
 
+// Class for defining glossy linear gradients
 class GlossyLinearGradient extends GlossyGradient {
   const GlossyLinearGradient({
     this.begin = Alignment.centerLeft,
@@ -122,6 +142,7 @@ class GlossyLinearGradient extends GlossyGradient {
   final AlignmentGeometry end;
   final TileMode tileMode;
 
+  // Get linear gradient
   LinearGradient getLinearGradient() {
     return LinearGradient(
         colors: colors.map((e) => e.withOpacity(opacity)).toList(),
@@ -130,3 +151,35 @@ class GlossyLinearGradient extends GlossyGradient {
         tileMode: tileMode);
   }
 }
+
+// Class for defining glossy radial gradients
+class GlossyRadialGradient extends GlossyGradient {
+  const GlossyRadialGradient({
+    this.center = Alignment.center,
+    this.radius = 0.5,
+    required super.colors,
+    required super.opacity,
+    this.tileMode = TileMode.clamp,
+    this.focal,
+    this.focalRadius = 0.0,
+  });
+  final AlignmentGeometry center;
+  final double radius;
+  final TileMode tileMode;
+
+  final AlignmentGeometry? focal;
+  final double focalRadius;
+
+  // Get radial gradient
+  RadialGradient getRadialGradient() {
+    return RadialGradient(
+      colors: colors.map((e) => e.withOpacity(opacity)).toList(),
+      center: center,
+      focal: focal,
+      focalRadius: focalRadius,
+      radius: radius,
+      tileMode: tileMode,
+    );
+  }
+}
+
