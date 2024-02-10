@@ -125,3 +125,12 @@ class MyApp extends StatelessWidget {
 - `image`: Background image of the container.
 - `imageOpacity`: Opacity of the background image.
 
+## Support
+
+If you find this project helpful and would like to support its development, you can contribute by donating via PayPal:
+
+[![Donate via PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](YOUR_PAYPAL_LINK)
+
+Your contributions are greatly appreciated and will help in further improving this project.
+
+
