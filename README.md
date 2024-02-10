@@ -34,4 +34,6 @@ Open you termilar in the project level and run this command.
 ```bash
 flutter pub add glossy
 ```
+## Usage
 
+You can use the `GlossyContainer` widget provided by this package to create glass morphism effects. Here's a basic example:
