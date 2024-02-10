@@ -107,10 +107,10 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
-Parameters
+## Parameters
 
-- `width`: The width of the container.
-- `height`: The height of the container.
+- `width`: The width of the container `required`.
+- `height`: The height of the container `required`.
 - `borderRadius`: The border radius of the container.
 - `blur`: The amount of blur to apply to the container.
 - `child`: The widget placed inside the glass container.
