@@ -24,11 +24,14 @@ dependencies:
 OR
 <br>
 <br>
+<p>
 Open you termilar in the project level and run this command.
-<br>
+  
+</p>
+
+
 
 ```bash
-
 flutter pub add glossy
 ```
 
