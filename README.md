@@ -12,12 +12,12 @@ This Flutter package allows you to easily create glass morphism effects in your 
 
 ## Installation
 
-To use this package, add `glass_morphism` as a dependency in your `pubspec.yaml` file:
+To use this package, add `glosy` as a dependency in your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
   flutter:
     sdk: flutter
-  glass_morphism: ^1.0.0
+  glossy: ^1.0.0
 
 
