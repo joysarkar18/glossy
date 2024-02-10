@@ -6,10 +6,6 @@
   
 </p>
 
-# Glass Morphism Effect Flutter Package
-
-![Glass Morphism Effect](glass_morphism_example.png)
-
 ## Overview
 
 This Flutter package allows you to easily create glass morphism effects in your Flutter applications. Glass morphism is a design trend that involves using blurred, semi-transparent elements to create a frosted glass-like effect.
