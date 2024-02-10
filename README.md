@@ -25,6 +25,7 @@ OR
 <br>
 <br>
 Open you termilar in the project level and run this command.
+
 ```bash
 flutter pub add glossy
 ```
