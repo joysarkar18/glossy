@@ -16,14 +16,14 @@ To use this package, add `glossy` as a dependency in your `pubspec.yaml` file:
 dependencies:
   flutter:
     sdk: flutter
-  glossy: ^0.0.1
+  glossy: ^0.0.2
 ```
 <br>
 OR
 <br>
 <br>
 <p>
-Open you termilar in the project level and run this command.
+Open your termilar in the project level and run this command.
   
 </p>
 
