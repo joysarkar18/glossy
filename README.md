@@ -1,4 +1,4 @@
-<h1 align="centre">Glossy</h1>
+<h1 align="centre" justify="centre">Glossy</h1>
 
 ## Screenshots
 <p align="center">
