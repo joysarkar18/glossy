@@ -107,3 +107,21 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+Parameters
+
+- `width`: The width of the container.
+- `height`: The height of the container.
+- `borderRadius`: The border radius of the container.
+- `blur`: The amount of blur to apply to the container.
+- `child`: The widget placed inside the glass container.
+- `color`: Background color of the container.
+- `opacity`: Opacity of the container.
+- `strengthX`: Strength of blur in the horizontal direction.
+- `strengthY`: Strength of blur in the vertical direction.
+- `border`: Border of the container.
+- `blendMode`: Blend mode for applying filter.
+- `gradient`: Gradient of the container.
+- `boxShadow`: Box shadows for the container.
+- `image`: Background image of the container.
+- `imageOpacity`: Opacity of the background image.
+
