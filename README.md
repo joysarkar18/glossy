@@ -129,9 +129,10 @@ class MyApp extends StatelessWidget {
 
 If you find this project helpful and would like to support its development, you can connect with me on social media:
 
-- [Twitter](YOUR_TWITTER_LINK)
-- [Instagram](YOUR_INSTAGRAM_LINK)
-- [LinkedIn](YOUR_LINKEDIN_LINK)
+- [Twitter](https://twitter.com/byteberg)
+- [Instagram](https://www.instagram.com/byteberg?igsh=MThrNWNoY2t0ZjNocQ==)
+- [LinkedIn](https://www.linkedin.com/in/joy-sarkar-667b47218/)
+- [GitHub](https://github.com/joysarkar18)
 
 Your support and feedback are greatly appreciated and will help in further improving this project.
 
