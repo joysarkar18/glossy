@@ -20,7 +20,7 @@ dependencies:
     sdk: flutter
   glossy: ^1.0.0
 ```
-or
+<h2>OR</h2>
 <br>
 Open you termilar in the project level and run this command.
 ```bash
