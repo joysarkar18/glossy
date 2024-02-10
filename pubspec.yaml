@@ -1,10 +1,10 @@
 name: glossy
-description: "A new Flutter package project."
+description: "A Flutter package to create glass morphism effect."
 version: 0.0.1
-homepage:
+homepage: https://github.com/joysarkar18/glossy
 
 environment:
-  sdk: '>=3.2.3 <4.0.0'
+  sdk: ">=3.2.3 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:

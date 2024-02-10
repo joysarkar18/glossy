@@ -17,6 +17,7 @@ class GlossyContainer extends StatelessWidget {
   final GlossyGradient? gradient; // Gradient of the container
   final List<BoxShadow>? boxShadow; // Box shadows for the container
   final DecorationImage? image; // Background image of the container
+  final double? imageOpacity;
 
   const GlossyContainer(
       {super.key,
@@ -32,6 +33,7 @@ class GlossyContainer extends StatelessWidget {
       this.gradient,
       this.child,
       this.image,
+      this.imageOpacity,
       this.boxShadow});
 
   @override
@@ -103,7 +105,7 @@ class GlossyContainer extends StatelessWidget {
             // Apply background image if available
             image != null
                 ? Opacity(
-                    opacity: opacity == null ? 1 : opacity!,
+                    opacity: imageOpacity == null ? 1 : imageOpacity!,
                     child: Container(
                       height: height,
                       width: width,
@@ -182,4 +184,3 @@ class GlossyRadialGradient extends GlossyGradient {
     );
   }
 }
-
