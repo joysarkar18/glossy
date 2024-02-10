@@ -20,7 +20,7 @@ dependencies:
     sdk: flutter
   glossy: ^1.0.0
 ```
-# or
+or
 Open you termilar in the project level and run this command.
 ```bash
 flutter pub add glossy
