@@ -127,10 +127,13 @@ class MyApp extends StatelessWidget {
 
 ## Support
 
-If you find this project helpful and would like to support its development, you can contribute by donating via PayPal:
+If you find this project helpful and would like to support its development, you can connect with me on social media:
 
-[![Donate via PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](YOUR_PAYPAL_LINK)
+- [Twitter](YOUR_TWITTER_LINK)
+- [Instagram](YOUR_INSTAGRAM_LINK)
+- [LinkedIn](YOUR_LINKEDIN_LINK)
 
-Your contributions are greatly appreciated and will help in further improving this project.
+Your support and feedback are greatly appreciated and will help in further improving this project.
+
 
 
