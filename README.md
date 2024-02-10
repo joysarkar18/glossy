@@ -18,7 +18,7 @@ To use this package, add `glossy` as a dependency in your `pubspec.yaml` file:
 dependencies:
   flutter:
     sdk: flutter
-  glossy: ^1.0.0
+  glossy: ^0.0.1
 ```
 <br>
 OR
