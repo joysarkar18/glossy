@@ -1,138 +1,249 @@
-## Screenshots
 <p align="center">
-<img src="https://firebasestorage.googleapis.com/v0/b/gamaru-mobile-app.appspot.com/o/asdasd.png?alt=media&token=fa9b4777-fc45-4481-91db-9faea5d94a9b" alt="App Screenshot" style="width: 25%; margin-right: 10px;">
-  
+  <h1 align="center" style="font-size: 48px;"> Glossy Container ⭐️</h1>
+  </p>
+
+A Flutter package for creating Glassmorphic UI designs in an easy and simple manner!
+Supports iOS, Android, web, Windows, macOS, and Linux.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/RitickSaha/glassmophism/master/images/s1.0.5x.jpg" width="30%" height="30%"/>
+  <h1 align="center" style="font-size: 48px;">Glassmorphic Example App. With realtime pub.dev stats📱</h1>
+  <h5 align="center">A package that simplefies your urge to create a interactive Glassmorphic Container.</h5>
+  <p align="center">Inspired by <a href="https://glassmorphism.com/">Glassmorphism CSS Generator.</a>
+      Highly customizable and helps developing beautiful Glassmorphic UI.
+  </p>
 </p>
 
-## Overview
+## Usage 💻
 
-This Flutter package allows you to easily create glass morphism effects in your Flutter applications. Glass morphism is a design trend that involves using blurred, semi-transparent elements to create a frosted glass-like effect.
+> [![likes](https://badges.bar/glassmorphism/likes)](https://pub.dev/packages/glassmorphism/score)<br> > [![pub points](https://badges.bar/glassmorphism/pub%20points)](https://pub.dev/packages/glassmorphism/score)<br> > [![popularity](https://badges.bar/glassmorphism/popularity)](https://pub.dev/packages/glassmorphism/score)<br>
 
-## Installation
+To use this plugin, add `glassmorphism` as a [dependency in your pubspec.yaml file](https://flutter.dev/platform-plugins/).
+Use the below example to get started with the sample example.
 
-To use this package, add `glossy` as a dependency in your `pubspec.yaml` file:
+> ## You can follow this tutorial and work around with the package.
+>
+> Glassmorphism UI Package For @Flutter || UI || A Glassy and easy to use Package #flutter
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  glossy: ^0.0.2
+[![Everything Is AWESOME](https://raw.githubusercontent.com/RitickSaha/glassmorphism/master/images/embed.png)](https://www.youtube.com/watch?v=MKj_7zyeeOQ "Play the video.")
+
+## Features 🔮
+
+- Fully customizable components
+- Easy To use
+- Null Safe version
+- Multiple Childs widgets supported
+- Gesture Listener [GestureDetector](https://api.flutter.dev/flutter/widgets/GestureDetector-class.html)
+- Circular Border / Traditional Borders
+- Gradient Borders
+- Gradient Fill on container `[Full Control to User]`
+
+### To use `GlassmorphicContainer` with fixed Height and width:
+
+```dart
+GlassmorphicContainer(
+  width: 350,
+  height: 350,
+  borderRadius: 20,
+  blur: 20,
+  alignment: Alignment.bottomCenter,
+  border: 2,
+  linearGradient: LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: [
+        Color(0xFFffffff).withOpacity(0.1),
+        Color(0xFFFFFFFF).withOpacity(0.05),
+      ],
+      stops: [
+        0.1,
+        1,
+      ]),
+  borderGradient: LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      Color(0xFFffffff).withOpacity(0.5),
+      Color((0xFFFFFFFF)).withOpacity(0.5),
+    ],
+  ),
+  child: null,
+),
 ```
-<br>
-OR
-<br>
-<br>
-<p>
-Open your termilar in the project level and run this command.
-  
-</p>
 
+### Use `GlassmorphicFlexContainer` with responsiveness or take child widgets size. :
 
-
-```bash
-flutter pub add glossy
+```dart
+GlassmorphicFlexContainer(
+  borderRadius: 20,
+  blur: 20,
+  padding: EdgeInsets.all(40),
+  alignment: Alignment.bottomCenter,
+  border: 2,
+  linearGradient: LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: [
+        Color(0xFFffffff).withOpacity(0.1),
+        Color(0xFFFFFFFF).withOpacity(0.05),
+      ],
+      stops: [
+        0.1,
+        1,
+      ]),
+  borderGradient: LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      Color(0xFFffffff).withOpacity(0.5),
+      Color((0xFFFFFFFF)).withOpacity(0.5),
+    ],
+  ),
+  child: null,
+),
 ```
-## Usage
 
-You can use the `GlossyContainer` widget provided by this package to create glass morphism effects. Here's a basic example:
+> example, Simple Glassmorphic Container with Blur.
+
+### Example
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:glossy/glossy.dart';
+import 'package:glassmorphism/glassmorphism.dart';
+import 'dart:ui';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.black,
-        appBar: AppBar(
-          title: const Text('Glass Morphism Example'),
-        ),
-        body: Center(
-          child: SizedBox(
-            width: 300,
-            height: 300,
-            child: Stack(
-              children: [
-                Container(
-                  height: 140,
-                  width: 140,
-                  decoration: (BoxDecoration(
-                      color: Colors.purple,
-                      borderRadius: BorderRadius.circular(70))),
-                ),
-                Align(
-                  alignment: Alignment.bottomRight,
-                  child: Container(
-                    height: 140,
-                    width: 140,
-                    decoration: (BoxDecoration(
-                        color: Colors.purple,
-                        borderRadius: BorderRadius.circular(70))),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: GlossyContainer(
-                    width: 200,
-                    height: 200,
-                    borderRadius: BorderRadius.circular(12),
-                    child: const Center(
-                      child: Text(
-                        'Glass Morphism',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+      title: 'GlassmorphicContainer Example',
+      home: GlassmorphicSample(),
+    );
+  }
+}
+
+class GlassmorphicSample extends StatefulWidget {
+  @override
+  State<GlassmorphicSample> createState() => GlassmorphicSampleState();
+}
+
+class GlassmorphicSampleState extends State<GlassmorphicSample> {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        child: Stack(
+          children: [
+            Image.network(
+              "https://github.com/RitickSaha/glassmophism/blob/master/example/assets/bg.png?raw=true",
+              fit: BoxFit.cover,
+              height: double.infinity,
+              width: double.infinity,
+              scale: 1,
             ),
-          ),
+            SafeArea(
+              child: Center(
+                child: GlassmorphicContainer(
+                    width: 350,
+                    height: 750,
+                    borderRadius: 20,
+                    blur: 20,
+                    alignment: Alignment.bottomCenter,
+                    border: 2,
+                    linearGradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          Color(0xFFffffff).withOpacity(0.1),
+                          Color(0xFFFFFFFF).withOpacity(0.05),
+                        ],
+                        stops: [
+                          0.1,
+                          1,
+                        ]),
+                    borderGradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Color(0xFFffffff).withOpacity(0.5),
+                        Color((0xFFFFFFFF)).withOpacity(0.5),
+                      ],
+                    ),
+                    child: null),
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
 }
 ```
-## Parameters
 
-- `width`: The width of the container `required`.
-- `height`: The height of the container `required`.
-- `borderRadius`: The border radius of the container.
-- `blur`: The amount of blur to apply to the container.
-- `child`: The widget placed inside the glass container.
-- `color`: Background color of the container.
-- `opacity`: Opacity of the container.
-- `strengthX`: Strength of blur in the horizontal direction.
-- `strengthY`: Strength of blur in the vertical direction.
-- `border`: Border of the container.
-- `blendMode`: Blend mode for applying filter.
-- `gradient`: Gradient of the container.
-- `boxShadow`: Box shadows for the container.
-- `image`: Background image of the container.
-- `imageOpacity`: Opacity of the background image.
+## Parameters ⚙️
 
-## Support
+- `height` (double) **[`required`]** - Height for the Widget **[`required`]**.
+- `width` (double) **[`required`]**- Width for the Widget **[`@required`]**.
+- `borderRadius` (double) **[`required`]**- Border Radius for the widget `0` - `any` **[`@required`]**.
+- `linearGradient` (LinearGradient) **[`required`]**- Fills the container with the gradient passed.
+- `border` (double) **[`required`]**- Gives Width to the ContainerBorder.
+- `blur` (double) **[`required`]**- Gives BlurFilter to the Container.
+- `borderGradient` (LinearGradient) **[`required`]**- Fills the container's border with the gradient passed.
+- `child` (widget) - [optional parameter] If there is a child widget then the widget will be rendered inside the container.
+- `alignment` (optional) - Handles the alignment [`Default_value`] - [`Alignemt.topleft`].
+- `padding` (EdgeInset) - Used to provide pading to the child widget [`Default_value`] - [`None`].
+- `BoxShape` (Fixed) - This value is fixed to [`BoxFit.rectangle`].
+- `constraints` (ChatUser) - The constructor `width` and `height` arguments are combined with the `constraints` argument to set this property.
+- `margin` (double) - Empty space to surround the [decoration] and [child].
 
-If you find this project helpful and would like to support its development, you can connect with me on social media:
+```dart
+  GlassmorphicContainer(
+    width: width,
+    height: height,
+    borderRadius:borderRadius,
+    blur: blur,
+    alignment: alignment,
+    border:border,
+    linearGradient: linearGradient,
+    borderGradient:borderGradient,
+    child: null),
+  );
+```
 
-- [Twitter](https://twitter.com/byteberg)
-- [Instagram](https://www.instagram.com/byteberg?igsh=MThrNWNoY2t0ZjNocQ==)
-- [LinkedIn](https://www.linkedin.com/in/joy-sarkar-667b47218/)
-- [GitHub](https://github.com/joysarkar18)
+## My Socials 👩‍👦‍👦
 
-Your support and feedback are greatly appreciated and will help in further improving this project.
+- _Official_
+  - [_Github_](https://www.github.com/riticksaha)
+  - [_Instagram_](https://www.instagram.com/theflutterfoundry/)
+  - [_Twitter_](https://twitter.com/flutterfoundry/)
+  - [_Youtube_](https://www.youtube.com/channel/UCH7gICVJpoZPRV6h9O6Xu4g)
+- _Personal_
+  - [Instagram](https://www.instagram.com/riticksaha_/)
+  - [Twitter](https://www.twitter.com/rsahatwt/)
 
+## Credits 👨🏻‍💻
 
+<center><a href="url"><img src="https://raw.githubusercontent.com/RitickSaha/glassmorphism/Glassmorphism--3.0.0/images/theFlutterFoundary.jpeg"align="left" height="48" width="48" ></center><BR></a><BR><BR>
 
+[The Flutter Foundry 💙 - Instagram Link](https://www.instagram.com/theflutterfoundry)
+
+## Found this project useful? ❤️
+
+If you found this project useful, then please consider giving it a ⭐️ on Github and sharing it with your friends via social media.
+
+## License ⚖️
+
+- [MIT](https://github.com/RitickSaha/glassmophism/blob/master/LICENSE)
+
+## API details 📝
+
+See the [glassmorphic.dart](https://github.com/RitickSaha/glassmophism/blob/master/lib/glassmorphism.dart) for more API details
+
+## Issues and feedback 💭
+
+If you have any suggestion for including a feature or if something doesn't work.
+Feel free to open a Github [issue](https://github.com/RitickSaha/glassmophism/issues) for us to have a discussion on it.

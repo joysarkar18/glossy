@@ -18,11 +18,15 @@ class GlossyContainer extends StatelessWidget {
   final List<BoxShadow>? boxShadow; // Box shadows for the container
   final DecorationImage? image; // Background image of the container
   final double? imageOpacity;
+  final EdgeInsets? padding;
+  final EdgeInsets? margin;
 
   const GlossyContainer(
       {super.key,
       required this.height,
       required this.width,
+      this.margin,
+      this.padding,
       this.opacity,
       this.strengthX,
       this.strengthY,
@@ -62,6 +66,8 @@ class GlossyContainer extends StatelessWidget {
         child: Container(
           height: height,
           width: width,
+          margin: margin,
+          padding: padding,
           color: Colors.transparent,
           child: Stack(children: [
             // Apply backdrop filter for blurring effect
