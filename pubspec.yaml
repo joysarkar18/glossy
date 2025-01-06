@@ -1,6 +1,6 @@
 name: glossy
 description: "Glossy: A Flutter package for creating sleek glassmorphic UI effects, perfect for modern app designs and stylish user interfaces."
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/joysarkar18/glossy
 
 environment:

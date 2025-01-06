@@ -9,3 +9,7 @@
 ## 0.0.3
 
 - Margin and padding added for GlossyContainer
+
+## 0.0.4
+
+- Removed deprecated withOpacity
